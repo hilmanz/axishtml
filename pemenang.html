@@ -1,0 +1,357 @@
+			<link href='http://fonts.googleapis.com/css?family=PT+Sans:700' rel='stylesheet' type='text/css'>
+			<style>
+			#isi ol {margin:0 0 15px 20px;}
+			#isi ol.ins-win {display:block;width:600px;height:1282px;background:transparent url('images/install-modem-win.jpg') no-repeat 0 0;margin:0 0 20px 0;}
+			#isi ol.ins-osx {display:block;width:600px;height:1229px;background:transparent url('images/install-modem-osx.jpg') no-repeat 0 0;margin:0 0 20px 0;}
+			#isi ol li{font:normal 12px/18px sans-serif;color:#430050;}
+			#isi ol.ins-win li, #isi ol.ins-osx li{display:none;}
+			#isi ul {margin-bottom:15px;}
+			#isi ul li{ list-style: outside;margin:0 0 0 20px;padding:0 0 0 10px; line-height:14px;font-size:10px;}
+			#isi img.bg-pos {display:block;position:absolute;}
+			.small_font{ font-size:10px;}
+			#white {padding:0 0 120px;background:transparent;position:relative;}
+			#white table th, #white table td {font:normal 12px Verdana, sans-serif;color:#333;border-right:solid 1px #ccc;padding:7px;vertical-align:middle;}
+			#white table td {border-top:solid 1px #ccc;}
+			#white h1 {font:bold 23px Arial, Helvetica, sans-serif;color:#4F0084;margin:0 0 20px 0;}
+			#white h2 {font:bold 18px Arial, Helvetica, sans-serif;color:#4F0084;margin:0 0 5px 0;}
+			#white p {color:#430050;font:normal 12px/20px Verdana, sans-serif;margin:0 0 20px 0;line-height:18px;}
+			#white p a{color:#cb2d80;text-decoration:underline;}
+			#photo-upload {background:#efefef url('images/polaroid-inside-center.jpg') repeat-y 0 0;width:637px;margin:0 auto;position:relative;}
+			#photo-upload .polaroid-top, #photo-upload .polaroid-bottom{display:block;position:absolute;top:0;left:0;z-index:1;}
+			#photo-upload .polaroid-bottom {top:auto;bottom:0;}
+			#photo-upload .photo-content{display:block;position:relative;z-index:2;min-height:300px;padding:60px 60px 180px;}
+			#photo-upload .infophotocontent{display:block;position:absolute;bottom:20px;left:90px;width:450px;}
+			#photo-upload .infophotocontent p{font:normal 14px 'PT Sans', sans-serif !important;color:#722d83;margin:0 0 10px;}
+			#photo-upload .infophotocontent p a{color:#eb008b;text-decoration:underline;}
+			#areabuton, ul#button {display:block;}
+			#areabuton {position:absolute;top:-27px;left:0;width:637px;}
+			ul#button li {lsit-style:none;display:block;float:left;margin:0 0 0 3px;padding:0;position:relative;}
+			ul#button li:first-child {margin:0;}
+			ul#button li a {display:block;padding:5px 8px;background:#eb008b;color:#fff;font:normal 13px/13px 'PT Sans', sans-serif;}
+			ul#button li a:hover, ul#button li a.selecteds {background:#722d83;color:#eb008b;}
+			.listhari ol {margin-left:30px !important;list-style-type: decimal;}
+			.listhari ol li {font:normal 14px/18px 'PT Sans', sans-serif !important;color:#722d83 !important;display:list-item;list-style:decimal;}
+			.listhari ol li.newcolumn {margin-left:295px;}
+			.listhari ol li.reset {margin-top:-900px;}
+			#white .ui-tabs-hide {display:none;}
+			.facebox_overlayBG {background:#7b0f79;zoom:1;filter: alpha(opacity=79) !important;opacity: 0.79 !important;}
+			#facebox {top:0 !important;left:0 !important;width:100%;}
+			#facebox .popupfacebox{border:0;left: 120px;margin: 123px auto 0;position: relative;width: 693px;}
+			#facebox .content {width:613px;background:#cfcfcf;padding:25px 40px 115px;}
+			#facebox .content ol {margin:0 0 0 30px;}
+			#facebox .content ol li{color:#50156b;font:normal 13px 'PT Sans', sans-serif !important;margin:0 0 15px;}
+			#facebox .close {top:auto;bottom:20px;right:20px;width:141px;height:46px;background:transparent url('images/photocontent-close.png') no-repeat 0 0;text-indent:-999em;}
+			#facebox p.sdk {width:432px;height:36px;text-indent:-999em;background:transparent url('images/title-sdk-photocontent-eng.png') no-repeat 0 0;margin-bottom:35px;}
+			.photocontent-social {display:block;width:100%;position:absolute;bottom:35px;}
+			.photocontent-social .soscounter{display:block;float:right;margin:0 0 0 15px;}
+			.colLeft{ width:220px; float:left; margin:0; padding:20px 0 0 0;}
+			.listhari{ position:absolute; display:none; clear:both;}
+			.lisActive{ position:relative; display:block;}
+			#selectDates{ float:right;}
+			#pilihtanggal{  position:absolute; left:40px;top:35px; width:295px; z-index:2;}
+			#pilihtanggal h3{ float:left; font-size:14px;}
+			.textBottom{ position:absolute; bottom:-110px; left:20px; width:300px;}
+			</style>
+			<script type="text/javascript" src="js/facebox.js"></script>			
+			<script>
+				jQuery(document).ready(function($) {
+					$('.infophotocontent p a.sdkclick').click(function() {
+						$.scrollTo($('div#isi'), 500);
+						return true;
+					});
+				  $('a[rel*=facebox]').facebox();
+				  $('#white .listpemenang').css('display', 'block');
+				}) 
+				$(document).ready(function() { 	
+				/*	$('.photo-content').livequery(function(){ $(this).children('.listhari').each(function() {
+						$(this).children('ol').children('li').each(function() {
+								var index = $('.listhari ol li').index(this);
+								if(index > 49) {$(this).addClass('newcolumn');}
+								if(index > 99) {$(this).removeClass('newcolumn');}
+								if(index > 149) {$(this).addClass('newcolumn');}
+								if(index > 199) {$(this).removeClass('newcolumn');}
+								if(index > 249) {$(this).addClass('newcolumn');}
+								if(index > 299) {$(this).removeClass('newcolumn');}
+								if(index > 349) {$(this).addClass('newcolumn');}
+								if(index > 399) {$(this).removeClass('newcolumn');}
+								if(index > 449) {$(this).addClass('newcolumn');}
+								if(index > 499) {$(this).removeClass('newcolumn');}
+								if(index > 549) {$(this).addClass('newcolumn');}
+								if(index > 599) {$(this).removeClass('newcolumn');}
+								if(index > 649) {$(this).addClass('newcolumn');}
+								if(index > 699) {$(this).removeClass('newcolumn');}
+								if(index == 50 || index == 150 || index == 250 || index == 350 || index == 450 || index == 550 || index == 650) {$(this).addClass('reset');}
+							});
+						});
+					});
+					function selectNav2() {
+						$(this)
+							.parents('ul:first')
+								.find('a')
+									.removeClass('selecteds')
+								.end()
+							.end()
+							.addClass('selecteds');
+					}
+
+					$('#tabsingle').find('a').click(selectNav2);
+
+					// go find the navigation link that has this target and select the nav
+					function trigger(data) {
+						var el = $('#button').find('a[href$="' + data.id + '"]').get(0);
+						selectNav2.call(el);
+						}
+
+					jQuery("#button a").click(function(){
+						jQuery("#button a").removeClass("selecteds");	
+						jQuery(this).addClass("selecteds");	
+						var targetID = jQuery(this).attr('href');
+						jQuery(".listhari").fadeOut();
+						jQuery(".listhari").removeClass("lisActive");
+						jQuery(targetID).addClass("lisActive");	
+						jQuery(targetID).fadeIn();
+						return false;
+					});	*/					
+
+					$('#selectDates').change(function(){
+						var selected = $(this).find(':selected');
+						$('.listhari').fadeOut();
+						$('.listhari').removeClass("lisActive");
+						$('.'+selected.val()).fadeIn();
+						$('.'+selected.val()).addClass("lisActive");
+					});
+				});
+
+			</script>
+			<div id="isi" style="background:#f2e3ef url('images/web_photo-upload_02.jpg') repeat-y 0 349px;min-height:356px;padding:349px 29px 10px 27px;width:637px;position:relative;overflow:hidden;">
+				<img src="images/web_photo-upload_01.jpg" alt="" style="position:absolute;left:0;top:0;"/>
+				<div id="white">
+					<div id="photo-upload">
+						<img src="images/polaroid-inside-top.jpg" class="polaroid-top" />
+						<div id="tabsingle" class="photo-content">
+							<!--<div id="areabuton">
+								<ul id="button" class="clearfix">
+									<li><a href="#hari1" class="selecteds"><strong>17 November 2012</strong></a></li>
+									<li><a href="#hari2"><strong>18 November 2012</strong></a></li>
+									<li><a href="#hari3"><strong>19 November 2012</strong></a></li>
+									<li><a href="#hari4"><strong>20 November 2012</strong></a></li>
+									<li><a href="#hari5"><strong>21 November 2012</strong></a></li>
+									<li><a href="#hari6"><strong>22 November 2012</strong></a></li>
+									<li><a href="#hari7"><strong>23 November 2012</strong></a></li>
+									<li><a href="#hari8"><strong>24 November 2012</strong></a></li>
+									<li><a href="#hari9"><strong>25 November 2012</strong></a></li>
+								</ul>
+							</div>-->
+                            <div id="pilihtanggal">
+                                <h3 class="selectPeriod">Pemenang Harian :</h3>
+                                <select id="selectDates">
+                                        <option value="hari1">17 November 2012</option>
+                                        <option value="hari2">18 November 2012</option>
+                                        <option value="hari3">19 November 2012</option>
+                                        <option value="hari4">20 November 2012</option>
+                                        <option value="hari5">21 November 2012</option>
+                                        <option value="hari6">22 November 2012</option>
+                                        <option value="hari7">23 November 2012</option>
+                                        <option value="hari8">24 November 2012</option>
+                                        <option value="hari9">25 November 2012</option>
+                                </select>
+                            </div>
+							<div id="hari1" class="hari1 listhari" style="display:block;">
+								<ol class="colLeft">
+                                  <li>Joeza Eza</li>
+                                  <li>Monang Sianipar</li>
+                                  <li>windy Andrianiaisah</li>
+								</ol>
+							</div>
+							<div id="hari2" class="hari2 listhari">
+                                <ol class="colLeft">
+                                  <li>Heri Setiawan</li>
+                                  <li>Bhonsay Taiminong (ANDRI AGUS TRIYANTO)</li>
+                                  <li>Ecy Cecem</li>
+                                  <li>Suci Chixmal</li>
+                                  <li>Trisna Budiman</li>
+                                  <li>Mahendra Putra</li>
+                                  <li>Faisal Acill</li>
+                                  <li>Ali Ridho</li>
+                                </ol>
+							</div>
+							<div id="hari3" class="hari3 listhari">
+                                <ol class="colLeft">
+                                      <li>Mizz Sunshine</li>
+                                      <li>Rudi Hariono</li>
+                                      <li>Rama Makie</li>
+                                      <li>Arifah Abriana Nasution</li>
+                                      <li>Tomi Yuli Setiawan</li>
+                                      <li>Ircham Gallan</li>
+                                      <li>Chafidin Chaf</li>
+                                      <li>Miftahul Jannah</li>
+                                      <li>Tonugamu S</li>
+                                      <li>Yosef Wahyudi</li>
+                                      <li>Rima Pramanik</li>
+                                </ol>
+							</div>
+							<div id="hari14" class="hari4 listhari">
+								<ol class="colLeft">
+                                  <li>Suryo Wibisono</li>
+                                  <li>Muhammad Ibnul Zikri</li>
+                                  <li>Daiyeng Situmorang</li>
+                                  <li>Scholastica Tyassanti</li>
+                                  <li>Mohammed Chaled</li>
+                                  <li>Riza Sauqi Valasev</li>
+                                  <li>Nina Hadiyanti</li>
+                                  <li>IGON Catburry (Hendra Lesmana Nugraha)</li>
+								</ol>
+							</div>
+							<div id="hari5" class="hari5 listhari">
+								<ol class="colLeft">
+                                  <li>Sinta Kartika Putri</li>
+                                  <li>Riko Arturo</li>
+                                  <li>Aku Citra</li>
+                                  <li>Bambang Rahadi</li>
+                                  <li>Krisna Purnamasari</li>
+                                  <li>Ap Syariev</li>
+                                  <li>Farhad Makarim</li>
+                                  <li>Ichsan kamil</li>
+                                  <li>Herawati Manihuruk</li>
+                                  <li>Setiawan Wibowo</li>
+                                  <li>Jhon Bravontal (yusuf)</li>
+                                  <li>Bhoray purnama (dwi purwanti)</li>
+                                  <li>Dharma Aday (Hidayatulloh)</li>
+                                  <li>Bayu Irfani</li>
+                                  <li>Ekiw Jah (Wike Widayanto)</li>
+                                  <li>Aris Mustofa</li>
+								</ol>
+							</div>
+							<div id="hari6" class="hari6 listhari">
+								<ol class="colLeft">
+                                  <li>Yuda Chandra Wiguna</li>
+                                  <li>KARYADI Kry</li>
+                                  <li>Tito Yuariesma</li>
+                                  <li>Syarif Pudin</li>
+                                  <li>Ahmad Yazzid</li>
+                                  <li>Salpriando Waldemar</li>
+                                  <li>Alvania Kirana</li>
+                                  <li>Jimson Rhino</li>
+                                  <li>Nazhifa Putrinda</li>
+                                  <li>Furdy LilF</li>
+                                  <li>Benks Setiawan</li>
+                                  <li>Hardi Setiawan</li>
+                                  <li>Faiqoh Marlina</li>
+                                  <li>Liyah Maria</li>
+								</ol>
+							</div>
+							<div id="hari7" class="hari7 listhari">
+								<ol class="colLeft">
+                                  <li>Umi Nur Chayanti</li>
+                                  <li>Ocy oktavia (Nur Oktavia Wahyuningsih)</li>
+                                  <li>Mayati Ati</li>
+                                  <li>Sabrina Adfi</li>
+                                  <li>Yudha Adi (yudha adi wicaksono)</li>
+                                  <li>Septyaningsih Ekayadi</li>
+                                  <li>Feyza Sahnoon</li>
+                                  <li>Ady Renardo</li>
+                                  <li>Nita Natalia</li>
+                                  <li>Setiawan Tampan (setiawan)</li>
+                                  <li>Ratih Anggraeni</li>
+                                  <li>Andy Meggy</li>
+                                  <li>Aqila Putri</li>
+                                  <li>Ramdani Ahmad</li>
+                                  <li>Galih Arum</li>
+                                  <li>Futichatul Izah</li>
+                                  <li>Doriska Apridayani</li>
+                                  <li>Hamka Ashari</li>
+								</ol>
+							</div>
+							<div id="hari8" class="hari8 listhari">
+								<ol class="colLeft">
+                                  <li>Didik Adityo</li>
+                                  <li>Irna Rosita</li>
+                                  <li>Latifah Batoq</li>
+                                  <li>Marselina Ncell</li>
+                                  <li>Fahmi Nurzan</li>
+                                  <li>Risky Purnama</li>
+                                  <li>Astriana yuni</li>
+                                  <li>Nadia Kartika</li>
+                                  <li>Adipati Krisna Dwipayana</li>
+                                  <li>Nabila Asty (Nabila Asty Prameswari)</li>
+                                  <li>Caca Tiwi</li>
+                                  <li>Muhammad Alfatih</li>
+								</ol>
+							</div>
+							<div id="hari9" class="hari9 listhari">
+								<ol class="colLeft">
+                                  <li>Ayunda Khumaira</li>
+                                  <li>Noval Ganteng</li>
+                                  <li>Iwan Suwandy</li>
+                                  <li>Rabel Relianta Zagoto</li>
+                                  <li>Galih Wicaksono</li>
+                                  <li>Umi Salma</li>
+                                  <li>Ahmad Aries</li>
+                                  <li>Seeva Aisyah</li>
+                                  <li>Lulu Lutuna</li>
+                                  <li>Gusti Dwi Saputra</li>
+                                  <li>Maria Citra</li>
+								</ol>
+							</div>
+                            <p class="textBottom">Jika ingin melihat pengumuman dari hari-hari sebelumnya, dapat dilihat di streamline akun G+ "AXISGSM Yang Baik" di <a href="http://bit.ly/QrWj4V" target="_blank">http://bit.ly/QrWj4V</a></p>
+							<div class="infophotocontent">
+								<p>Jika namamu tertera pada daftar di atas, mohon segera kirimkan data diri ke <a href="mailto:digital@axisworld.co.id">digital@axisworld.co.id</a> dengan alamat email yang kamu gunakan untuk akun G+ kamu.<br>Cukup cantumkan nama, nomor telepon dan nama akun G+ kamu.</p>
+								<p>Lihat disini untuk <a href="#sdkphoto" rel="facebox" class="sdkclick">Syarat dan Ketentuan</a></p>
+								<div id="sdkphoto" style="display:none;">
+									<div class="sdkwrap">
+										<p class="sdk">Syarat & Ketentuan</p>
+										<ol>
+											<li>Dengan mengikuti kegiatan ini, maka  anda setuju dan menyatakan menerima syarat dan ketentuan yang berlaku.</li>
+											<li>Karyawan dan perwakilan dari PT ("AXIS Telekom Indonesia") dan Google, afiliasinya, distributor, agen kreatif dan entitas lain yang bertindak atas nama AXIS dalam mengorganisir “AXIS G+ Photo Upload”, serta kerabat dekat peserta, tidak memenuhi syarat dan atau tidak diperbolehkan untuk berpartisipasi dalam “AXIS G+ Photo”.</li>
+											<li>Masa pendaftaran AXIS G+ Photo Upload berlaku mulai tanggal 17 November 2012 sampai dengan tanggal 21 Desember 2012.</li>
+											<li>Photo yang diupload merupakan hak milik pribadi peserta  dan  AXIS maupun Google tidak bertanggung jawab apabila dikemudian hari terjadi penggugatan atau urusan hukum lain yang berhubungan dengan Photo maupun caption yang diupload atau diikutsertakan dalam pogram ini. </li>
+											<li>Peserta boleh mengirimkan sebanyak-banyaknya photo dengan tema “Hangout Seru Bareng teman” yang unik sesuai ketentuan, namun setiap peserta hanya berhak 1 kali apresiasi selama periode program berlangsung.</li>
+											<li>Photo yang diupload tidak boleh mengandung unsur SARA, Pornografi, serta lolos proses Compliance dari AXIS dan Google. </li>
+											<li>100 orang pertama dengan foto yang lolos compliance berhak mendapatkan voucher pulsa isi ulang AXIS sebesar Rp.50.000,- dari AXIS dan Google.</li>
+											<li>Pengumuman 100 peserta pertama yang meng-up load photo sesuai dengan ketentuan akan di umumkan di streamline akun Google+ “AXISGSM Yang Baik” (http://bit.ly/QrWj4V) atau www.axisworld.co.id/GooglePlus sehari setelah proses penyaringan.</li>
+											<li>Setiap partisipan, diharapkan agar men-cek website www.axisworld.co.id/GooglePlus atau streamline akun Google+ “AXISGSM Yang Baik”. Bila nama anda tercantum, maka partisipan diharapkan mengirimkan kembali email (menggunakan email yang sama dengan yang digunakan pada akun google+) ke alamat digital@axisworld.co.id berisikan bukti foto, nama (sesuai KTP), dan nomor handphone yang dapat dihubungi untuk proses verifikasi.</li>
+											<li>Setelah proses verifikasi, AXIS dan Google akan mengirimkan apresiasi kepada partisipan melalui E-mail.</li>
+											<li>Semua Photo yang terpilih akan menjadi hak milik tunggal AXIS dan Google, dengan hak kepemilikan penuh dan tak terkekang, termasuk namun tidak terbatas pada hak untuk membuat, mengedit, menerbitkan dan menggunakan bahan-bahan dan informasi di dalamnya tanpa pertimbangan lebih lanjut atau pembayaran tambahan kepada peserta. </li>
+											<li>Semua keputusan oleh atau atas nama AXIS dan Google dalam hal yang berkaitan dengan pemilihan photo adalah final dan tidak dapat diganggu gugat.</li>
+											<li>Segala bentuk apresiasi tidak dapat ditukar dengan apapun atau diuangkan.</li>
+											<li>Pengiriman tanda terimakasih (tanda apresiasi) akan dilakukan oleh pihak AXIS selambat-lambatnya dalam kurun waktu 7 hari setelah peserta terkait melengkapi ketentuan data-data yang diperlukan.</li>
+											<li>Semua data harus dikirimkan oleh peserta kepada AXIS paling lambat seminggu setelah pengumuman di website. AXIS dan Google berhak untuk menganulir segala bentuk apresiasi  jika peserta tidak mengirimkan data yang diminta dari jangka waktu yang ditentukan.</li>
+											<li>Peserta dalam AXIS G+ Photo akan memberikan persetujuan kepada AXIS dan Google untuk: <br />
+											- Menyimpan dan menggunakan informasi pribadi peserta dan mematuhi kebijakan internal AXIS dan Google. <br />
+											- Menghubungi peserta dengan menggunakan data tersebut bila sewaktu-waktu diperlukan. <br />
+											- AXIS dan Google tidak diperbolehkan untuk mengungkapkan informasi pribadi yang diterima dari peserta kepada pihak ketiga untuk tujuan lain.
+											</li>
+											<li>Peserta dapat membatalkan persetujuan untuk semua ini, atau  untuk tidak dihubungi setiap saat dengan mengirimkan email ke digital@axisworld.co.id dengan subject pembatalan partisipasi dan detail  kontak.</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<img src="images/polaroid-inside-bottom.jpg" class="polaroid-bottom" />
+					</div>
+					<img src="images/polaroid-bottom.png" style="position:absolute;left:130px;bottom:84px;z-index:3;"/>
+					<div class="photocontent-social clearfix">
+						<div class="soscounter tw">
+							<a href="https://twitter.com/share" class="twitter-share-button" data-via="twitterapi" data-lang="en">Tweet</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						</div>
+						<div class="soscounter fb">
+							<div id="fb-root"></div>
+							<script>(function(d, s, id) {
+							  var js, fjs = d.getElementsByTagName(s)[0];
+							  if (d.getElementById(id)) return;
+							  js = d.createElement(s); js.id = id;
+							  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=209794015819191";
+							  fjs.parentNode.insertBefore(js, fjs);
+							}(document, 'script', 'facebook-jssdk'));</script>
+							<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+						</div>
+						<div class="soscounter gp" style="width:65px;">
+							<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+							<div class="g-plusone" data-size="medium" annotation="buble" data-width="155"></div>
+						</div>
+					</div>
+				</div>
+            </div>
+			

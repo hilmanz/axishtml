@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AXIS - GSM YANG BAIK</title>
+<script language="Javascript" type="text/javascript" src="js/jquery-1.4.1.js"></script>
+<script language="Javascript" type="text/javascript" src="js/jquery.lwtCountdown-1.0.js"></script>
+<script language="Javascript" type="text/javascript" src="js/misc.js"></script>
+<link rel="stylesheet" type="text/css" href="css/axiscountdown.css" />
+
+<body>
+<div id="body">
+    	<a id="logo" href="#">&nbsp;</a>
+	<div id="countdown">
+		<div id="countdown_dashboard">
+			<div class="dash hours_dash">
+				<span class="dash_title">hours</span>
+				<div class="digit">0</div>
+				<div class="digit">0</div>
+			</div>
+			<span class="space">:</span>
+			<div class="dash minutes_dash">
+				<span class="dash_title">minutes</span>
+				<div class="digit">0</div>
+				<div class="digit">0</div>
+			</div>
+			<span class="space">:</span>
+			<div class="dash seconds_dash">
+				<span class="dash_title">seconds</span>
+				<div class="digit">0</div>
+				<div class="digit">0</div>
+			</div>
+		</div>
+		<script language="javascript" type="text/javascript">
+			jQuery(document).ready(function() {
+				// Countdown
+				$('#countdown_dashboard').countDown({
+					targetDate: {
+						'day': 		12,
+						'month': 	12,
+						'year': 	2012,
+						'hour': 	12,
+						'min': 		12,
+						'sec': 		12
+					},
+					omitWeeks: true,
+					onComplete: function() 
+					{ 
+						$('#countdown_dashboard').hide(1000)
+					}
+				});
+			});
+		</script>
+	</div><!-- end #countdown -->
+    <div id="footer">
+    <h1>Prepare To Be Amazed</h1>
+    <a class="oldWeb" href="#">&nbsp;</a> 
+    </div>
+</div><!-- end #body -->
+</body>
+</html>
